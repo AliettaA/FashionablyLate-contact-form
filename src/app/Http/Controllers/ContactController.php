@@ -30,5 +30,10 @@ class ContactController extends Controller
         return redirect('/thanks');
 
     }
+
+    public function register()
+    {
+        return view('auth.register');
+    }
 }
 

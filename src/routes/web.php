@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
 Route::get('/thanks', function () {
     return view('thanks');
+});
+Route::get('/auth/register', [ContactController::class, 'register']);
+Route::get('/', [AuthController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/', [AuthController::class, 'index']);
 });
