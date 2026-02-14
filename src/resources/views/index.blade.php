@@ -10,7 +10,7 @@
         <div class="contact-form__heading">
             <h2>Contact</h2>
         </div>
-        <form class="form" action="/confirm" method="post">
+        <form class="form" action="/confirm" method="post" novalidate>
             @csrf
             <!-- 名前 -->
             <div class="form__group">
@@ -27,8 +27,13 @@
                             <input type="text" name="first_name" placeholder="例：太郎" value="{{ old('first_name') }}" />
                         </div>
                     </div>
-                    <div class="error__message">
-                        @error('last_name') <p class="text-red-500">{{ $message }}</p> @enderror
+                    <div class="form__error--flex">
+                        <div class="error__message">
+                            @error('last_name') <p class="error__text">{{ $message }}</p> @enderror
+                        </div>
+                        <div class="error__message">
+                            @error('first_name') <p class="error__text">{{ $message }}</p> @enderror
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,15 +45,15 @@
                 </div>
                 <div class="form__input--content">
                     <div class="form__input--flex">
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="1" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : '' }}>
                         <label for="male">男性</label>
-                        <input type="radio" id="female" name="gender" value="female" checked>
+                        <input type="radio" id="2" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>
                         <label for="female">女性</label>
-                        <input type="radio" id="other" name="gender" value="other">
+                        <input type="radio" id="3" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>
                         <label for="other">その他</label>
                     </div>
                     <div class="form__error">
-                        <!--バリデーション機能を実装したら記述します。-->
+                        @error('gender') <p class="error__text">{{ $message }}</p> @enderror
                     </div>
                 </div>
             </div>
@@ -61,11 +66,11 @@
                 <div class="form__input--content">
                     <div class="form__input--box">
                         <div class="form__input--flex">
-                            <input type="email" name="email" placeholder="test@example.com" />
+                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
                         </div>
-                        <div class="form__error">
-                            <!--バリデーション-->
-                        </div>
+                    </div>
+                    <div class="form__error">
+                        @error('email') <p class="error__text">{{ $message }}</p> @enderror
                     </div>
                 </div>
             </div>
@@ -81,15 +86,25 @@
                             <div class="form__input--box">
                                 <input class="input__tel" type="text" name="tel1" value="{{ old('tel1', $contact['tel1'] ?? '') }}" placeholder="090">
                             </div>
+                            <span class="tel-hyphen">ー</span>
                             <div class="form__input--box">
                                 <input class="input__tel" type="text" name="tel2" placeholder="1234" value="{{ old('tel2', $contact['tel2'] ?? '') }}">
                             </div>
+                            <span class="tel-hyphen">ー</span>
                             <div class="form__input--box">
                                 <input class="input__tel" type="text" name="tel3" placeholder="5678" value="{{ old('tel3', $contact['tel3'] ?? '') }}">
                             </div>
                         </div>
-                        <div class="form__error">
-                            <!--バリデーション-->
+                        <div class="form__error--flex">
+                            <div class="form__error">
+                                @error('tel1') <p class="error__text">{{ $message }}</p> @enderror
+                            </div>
+                            <div class="form__error">
+                                @error('tel2') <p class="error__text">{{ $message }}</p> @enderror
+                            </div>
+                            <div class="form__error">
+                                @error('tel3') <p class="error__text">{{ $message }}</p> @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,11 +118,11 @@
                 <div class="form__input--content">
                     <div class="form__input--box">
                         <div class="form__input--flex">
-                            <input class="input__address" type="text" name="address" placeholder="例：東京都世田谷区千駄ヶ谷1-2-3" />
+                            <input class="input__address" type="text" name="address" placeholder="例：東京都世田谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
                         </div>
-                        <div class="form__error">
-                            <!--バリデーション-->
-                        </div>
+                    </div>
+                    <div class="form__error">
+                        @error('address') <p class="error__text">{{ $message }}</p> @enderror
                     </div>
                 </div>
             </div>
@@ -119,10 +134,7 @@
                 <div class="form__input--content">
                     <div class="form__input--box">
                         <div class="form__input--flex">
-                            <input class="input__building" type="text" name="building" placeholder="例：千駄ヶ谷マンション101" />
-                        </div>
-                        <div class="form__error">
-                            <!--バリデーション-->
+                            <input class="input__building" type="text" name="building" placeholder="例：千駄ヶ谷マンション101" value="{{ old('building') }}" />
                         </div>
                     </div>
                 </div>
@@ -145,7 +157,7 @@
                         </select>
                     </div>
                     <div class="form__error">
-                        <!--バリデーション-->
+                        @error('category_id') <p class="error__text">{{ $message }}</p> @enderror
                     </div>
                 </div>
             </div>
@@ -158,15 +170,18 @@
                 <div class="form__input--content">
                     <div class="form__input--box">
                         <div class="form__input--flex">
-                            <textarea class="input__content" name="content" placeholder="お問い合わせ内容をご記載ください"></textarea>
+                            <textarea class="input__detail" name="detail" placeholder="お問い合わせ内容をご記載ください" value="{{ old('detail') }}"></textarea>
                         </div>
+                    </div>
+                    <div class="form__error">
+                        @error('detail') <p class="error__text">{{ $message }}</p> @enderror
                     </div>
                 </div>
             </div>
-                <!-- 確認ボタン -->
-                <div class="form__button">
-                    <button class="form__button-submit" type="submit">確認画面</button>
-                </div>
+            <!-- 確認ボタン -->
+            <div class="form__button">
+                <button class="form__button-submit" type="submit">確認画面</button>
+            </div>
         </form>
     </div>
 </main>

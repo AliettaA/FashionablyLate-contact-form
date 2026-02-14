@@ -49,7 +49,7 @@
         <!-- pagination -->
         <div class="tool-bar">
             <div class="export__button">
-                <a href="{{ url('/admin/export') . '?' . http_build_query(request()->query()) }}" class="export__button-submit">
+                <a href="{{ route('admin.export', request()->query()) }}" class="export__button-submit">
                     エクスポート
                 </a>
             </div>
@@ -77,12 +77,8 @@
                     <td>{{ $contact->gender == 1 ? '男性' : ($contact->gender == 2 ? '女性' : 'その他') }}</td>
                     <td>{{ $contact->email }}</td>
                     <td>{{ $contact->category->content }}</td>
-
-                    {{-- ★重要：ボタンは必ず <td> の中に入れる --}}
                     <td>
                         <button class="detail-button" onclick="openModal('{{ $contact->id }}')">詳細</button>
-
-                        {{-- ★重要：モーダルの塊も <td> の中に入れてしまいます --}}
                         <div id="modal-{{ $contact->id }}" class="modal-overlay" style="display: none;">
                             <div class="modal-inner">
                                 <button type="button" class="modal-close" onclick="closeModal('{{ $contact->id }}')">×</button>
@@ -139,7 +135,7 @@
 </main>
 <script>
     function openModal(id) {
-        console.log('Opening modal for ID:', id); // デバッグ用：コンソールにログを出す
+        console.log('Opening modal for ID:', id);
         const modal = document.getElementById('modal-' + id);
         if (modal) {
             modal.style.display = 'flex';

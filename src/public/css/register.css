@@ -36,7 +36,9 @@
 .form__error {
     height: 20px;
     color: #ff0000;
+    font-size: 14px;
     text-align: left;
+    padding: 0 80px;
 }
 
 .form__input--text input {

@@ -31,6 +31,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => ['required', 'string', 'min:8'],
         ])->validate();
 
+
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],

@@ -74,10 +74,29 @@
     resize: vertical;
     /* 縦方向のみリサイズ可能に */
 }
-.error__message {
+
+.tel-hyphen {
+    margin: 0 5px;
+    color: #947b62;
+    line-height: 5;
+    font-size: 12px;
+}
+.form__error--flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.error__text {
     color: red;
     font-size: 14px;
+    margin-top: 5px;
 }
+
+.error__item {
+    flex: 1;
+}
+
 .form__button {
     margin-top: 30px;
     text-align: center;
