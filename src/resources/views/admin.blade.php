@@ -12,7 +12,7 @@
             <h2>Admin</h2>
         </div>
         <!-- search-bar -->
-        <form class="search-form" action="/admin" method="get">
+        <form class="search-form" action="/search" method="get">
             <div class="search-form__inner">
                 <div class="input__name">
                     <input type="text" name="keyword" value="{{ request('keyword') }}" placeholder=" 名前やメールアドレスを入力してください">
@@ -42,7 +42,7 @@
                     <button type="submit">検索</button>
                 </div>
                 <div class="search-form__reset">
-                    <a href="/admin">リセット</a>
+                    <a href="/reset">リセット</a>
                 </div>
             </div>
         </form>
@@ -120,7 +120,7 @@
                                             <th>お問い合わせ内容</th>
                                             <td>{{ $contact->detail }}</td>
                                         </tr>
-                                        <form action="/admin/delete" method="POST" class="delete-form">
+                                        <form class="delete-form" action="/delete" method="POST">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $contact->id }}">
                                             <button type="submit" class="delete-button">削除</button>

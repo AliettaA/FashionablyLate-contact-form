@@ -52,6 +52,12 @@ nav svg {
     text-align: left;
 }
 
+.contact-table__row:hover {
+    background-color: #f5f0ebc8;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
 .contact-table__row td {
     padding: 15px;
     border-bottom: 1px solid #eee;
@@ -70,13 +76,23 @@ position: fixed;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #75737323;
     display: none;
     align-items: center;
     /* 縦方向の中央 */
     justify-content: center;
     z-index: 10000;
 }
+.modal-inner {
+    position: relative;
+    /* ★これが必要！右上の基準点になります */
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    /* 余白を広めに取ると「×」と中身が被りません */
+    border-radius: 2px;
+}
+
 .modal-table {
     background-color: #fff;
     width: 90%;
@@ -89,4 +105,29 @@ position: fixed;
     /* 角を少し丸く（角ばらせるなら0） */
     position: relative;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    /* ★絶対配置 */
+    top: 10px;
+    /* 上からの距離 */
+    right: 15px;
+    /* 右からの距離 */
+    background: none;
+    border: none;
+    font-size: 24px;
+    /* ほどよい大きさ */
+    color: #8b7969;
+    /* デザインに合わせた色 */
+    cursor: pointer;
+    line-height: 1;
+    transition: opacity 0.3s;
+}
+
+.delete-form {
+    position: absolute;
+    bottom: 10px;
+    background: #8b7969;
+    color: #fff;
 }

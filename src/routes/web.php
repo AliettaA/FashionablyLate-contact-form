@@ -27,5 +27,14 @@ Route::get('/auth/login', [AuthController::class, 'login']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin']);
+    Route::get('/search', [AuthController::class, 'admin'])->middleware('auth');
+    Route::get('/reset', function () {
+        return redirect('/admin');
+    });
+    Route::get('/export', [AuthController::class, 'export']);
+    Route::post('/delete', [AuthController::class, 'destroy'])->name('admin.delete');
+    Route::post('/logout', function () {
+        Auth::logout();
+        return redirect('/login');
+    });
 });
-Route::get('/admin/export', [AuthController::class, 'export'])->middleware('auth');

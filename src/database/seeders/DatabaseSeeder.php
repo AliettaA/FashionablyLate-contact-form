@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::create([
             'name' => 'Admin',
             'email' => 'test@example.com',
-            'password' => Hash::make('password'), // Hash::make を忘れずに！
+            'password' => Hash::make('password'),
         ]);
         $this->call(CategoriesTableSeeder::class);
         \App\Models\Contact::factory(35)->create();

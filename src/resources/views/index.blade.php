@@ -163,10 +163,10 @@
                     </div>
                 </div>
             </div>
-            <!-- 確認ボタン -->
-            <div class="form__button">
-                <button class="form__button-submit" type="submit">確認画面</button>
-            </div>
+                <!-- 確認ボタン -->
+                <div class="form__button">
+                    <button class="form__button-submit" type="submit">確認画面</button>
+                </div>
         </form>
     </div>
 </main>
