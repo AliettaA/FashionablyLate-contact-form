@@ -116,12 +116,12 @@
                                             <th>お問い合わせ内容</th>
                                             <td>{{ $contact->detail }}</td>
                                         </tr>
-                                        <form class="delete-form" action="/delete" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $contact->id }}">
-                                            <button type="submit" class="delete-button">削除</button>
-                                        </form>
                                     </table>
+                                    <form class="delete-form" action="{{ route('admin.delete') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $contact->id }}">
+                                        <button type="submit" class="delete-button">削除</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

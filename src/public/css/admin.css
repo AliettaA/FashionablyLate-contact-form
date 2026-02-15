@@ -163,56 +163,62 @@ pagination .page-item.active .page-link {
     height: 100%;
     display: none;
     align-items: center;
-    /* 縦方向の中央 */
     justify-content: center;
-    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 .modal-inner {
     position: relative;
-    /* ★これが必要！右上の基準点になります */
     background-color: #fff;
     width: 90%;
-    max-width: 500px;
-    padding: 40px;
-    /* 余白を広めに取ると「×」と中身が被りません */
+    max-width: 700px;
+    padding: 50px 40px;
     border-radius: 2px;
+    border: 1px solid var(--main-color);
 }
-
+.modal-table th {
+    text-align: left;
+    width: 30%;
+    padding: 15px 0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-family: serif;
+}
+.modal-table td {
+    padding: 15px 0;
+    color: #333;
+}
 .modal-table {
-    background-color: #fff;
-    width: 90%;
-    /* スマホなど小さな画面用 */
-    max-width: 500px;
-    /* ★ここで横幅を小さく制限（お好みで400pxなど） */
-    padding: 30px;
-    /* 余白を少し詰めると引き締まります */
-    border-radius: 2px;
-    /* 角を少し丸く（角ばらせるなら0） */
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-bottom: 30px;
+    border-collapse: collapse;
 }
-
 .modal-close {
     position: absolute;
-    /* ★絶対配置 */
-    top: 10px;
-    /* 上からの距離 */
-    right: 15px;
-    /* 右からの距離 */
+    top: 15px;
+    right: 20px;
     background: none;
-    border: none;
-    font-size: 24px;
-    /* ほどよい大きさ */
-    color: #8b7969;
-    /* デザインに合わせた色 */
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    color: #666;
+    font-size: 18px;
     line-height: 1;
-    transition: opacity 0.3s;
 }
-
-.delete-form {
-    position: absolute;
-    bottom: 10px;
-    background: #8b7969;
+.delete-button {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--error-color);
     color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.delete-button:hover {
+    opacity: 0.8;
 }

@@ -44,7 +44,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'ログイン情報に不備があります',
+            'email' => 'ログイン情報が登録されていません',
         ])->onlyInput('email');
     }
 
@@ -118,6 +118,6 @@ class AuthController extends Controller
     public function destroy(Request $request)
     {
         Contact::find($request->id)->delete();
-        return redirect('/admin')->with('success', 'お問い合わせを削除しました');
+        return redirect('/admin');
     }
 }

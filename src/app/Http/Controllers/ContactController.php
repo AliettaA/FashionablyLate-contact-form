@@ -38,7 +38,7 @@ class ContactController extends Controller
             'building',
             'detail'
         ]);
-        $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
+        $contact['tel'] = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
         Contact::create($contact);
         return redirect('/thanks');
     }
