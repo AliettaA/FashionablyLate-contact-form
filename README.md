@@ -40,7 +40,7 @@
 ・Sanitize.css: スタイルリセット
 
 ## 3. ER図
-![ER図](./src/docs/fashinably-late.png)
+![ER図](./src/docs/FashionablyLate.png)
 
 ## ４. URL
 **ユーザー側（お問い合わせフォーム）**: (http://localhost/)

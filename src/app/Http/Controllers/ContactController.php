@@ -20,7 +20,6 @@ class ContactController extends Controller
         $contact = $request->all();
         $category = Category::find($request->category_id);
         $contact['category_content'] = $category ? $category->content : '未選択';
-        $contact['category_id'] = $request->category_id;
         $contact['fullname'] = $request->last_name . ' ' . $request->first_name;
         $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
         return view('confirm', compact('contact'));

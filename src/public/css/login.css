@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .login-form__heading {
@@ -26,7 +26,7 @@
 .form {
     margin: 0 auto;
     width: 700px;
-    min-height: 600px;
+    min-height: 500px;
     padding-bottom: 40px;
     text-align: center;
     background-color: #fff;
@@ -54,7 +54,6 @@
 
 .form__input--text {
     width: 100%;
-    color: var(--main-color);
 }
 
 .form__input--text input {
@@ -74,12 +73,14 @@
     background: #fff;
     box-shadow: 0 0 0 1px var(--main-color);
 }
+
 .form__input--text input::placeholder {
     color: #cbaf99;
     font-size: 14px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     opacity: 1;
 }
+
 .form__error {
     width: 100%;
     padding: 0;

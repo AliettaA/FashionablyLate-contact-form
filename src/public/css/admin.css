@@ -14,8 +14,9 @@
     letter-spacing: 0.05em;
     text-align: center;
     color: var(--main-color);
-    margin: 20px;
+    margin: 15px 0;
 }
+/* search bar部分 */
 .search-form {
     max-width: 1100px;
     margin: 20px auto;
@@ -23,8 +24,8 @@
 .search-form__inner {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
+    gap: 15px;
+    margin-bottom: 15px;
     width: 100%;
 }
 .input__name {
@@ -58,18 +59,21 @@
 .select__kinds,
 .input__date input {
     background-color: #f2f2f2;
-    border: none;
-    border-radius: 2px;
-    padding: 12px 15px;
-    color: var(--main-color);
-    font-size: 16px;
+    border: 1px solid #d4bea9;
     width: 100%;
+    border-radius: 2px;
+    padding: 10px 15px;
+    color: var(--main-color);
+    font-size: 14px;
     outline: none;
-    height: 45px;
+    height: 38px;
+    box-sizing: border-box;
 }
+
+/* search bar ボタン */
 .search-form__button {
     width: 100px;
-    height: 40px;
+    height: 38px;
 }
 .search-form__button button {
     width: 100%;
@@ -87,7 +91,7 @@
 }
 .search-form__reset {
     width: 100px;
-    height: 40px;
+    height: 38px;
 }
 .reset__button {
     width: 100%;
@@ -95,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #e4caaf;
+    background: #cab7a3;
     border-radius: 3px;
     color: #fff;
     border: none;
@@ -103,19 +107,8 @@
     cursor: pointer;
     transition: opacity 0.3s;
 }
-.input__name input,
-.select__gender,
-.select__kinds,
-.input__date input {
-    border: 1px solid #d4bea9;
-    border-radius: 2px;
-    padding: 10px 15px;
-    color: var(--main-color);
-    font-size: 14px;
-    outline: none;
-    height: 45px;
-    box-sizing: border-box;
-}
+
+/* 2段目ツールバー部分 */
 .tool-bar {
     display: flex;
     justify-content: space-between;
@@ -126,7 +119,7 @@
 }
 .export__button {
     width: 150px;
-    height: 40px;
+    height: 38px;
 }
 .export__button-submit {
     width: 100%;
@@ -142,6 +135,8 @@
     cursor: pointer;
     transition: opacity 0.3s;
 }
+
+/* ページネーション */
 .pagination {
     display: flex;
     justify-content: center;
@@ -150,11 +145,13 @@
 }
 .pagination .page-item .page-link {
     display: inline-block;
-    padding: 10px 16px;
+    padding: 6px 12px;
     border: 1px solid #e0dfde;
     color: var(--main-color);
     background-color: #fff;
     text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 .pagination .page-item.active .page-link {
     background-color: var(--main-color);
@@ -166,9 +163,12 @@
     background-color: var(--main-color);
     color: #fff;
 }
+
+/* コンタクトテーブル */
 .contact-table__inner {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid #dcd8d4c8;
     font-size: 16px;
     color: var(--main-color);
 }
@@ -176,7 +176,7 @@
 .contact-table__title th {
     background-color: var(--main-color);
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     padding: 15px;
     text-align: left;
 }
@@ -186,8 +186,9 @@
     cursor: pointer;
 }
 .contact-table__row td {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
+    padding: 18px;
+    border-bottom: 1px solid #dcd8d4c8;;
+    font-size: 15px;
 }
 .detail-button {
     background-color: #f1ece8;
@@ -208,6 +209,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
+/* モーダル */
 .modal-inner {
     position: relative;
     background-color: #fff;

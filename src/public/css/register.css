@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 0;
+    padding: 50px 0;
 }
 
 .register-form__heading {
@@ -26,17 +26,17 @@
 .form {
     margin: 0 auto;
     width: 700px;
-    min-height: 600px;
+    min-height: 500px;
     padding-bottom: 40px;
     text-align: center;
     background-color: #fff;
     border: 1px solid #b69a84;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .form__group {
-    margin: 50px auto;
+    margin: 40px auto;
 }
 .form__group--content {
     width: 70%;

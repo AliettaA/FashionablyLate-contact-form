@@ -18,14 +18,14 @@
 }
 .form {
     width: 70%;
-    margin: 50px auto;
+    margin: 40px auto;
     font-size: 18px;
     font-family: sans-serif;
     color:var(--main-color);
 }
 .confirm-table {
     border: 1px solid #d4bea9;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 .confirm-table__inner {
     width: 100%;
